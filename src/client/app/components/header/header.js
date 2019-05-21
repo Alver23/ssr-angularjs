@@ -3,14 +3,8 @@
 angular
     .module('example-app')
     .component('header', {
-        template:
-            '<ul>' +
-            '<li ng-repeat="phone in $ctrl.phones">' +
-            '<span>{{phone.name}}</span>' +
-            '<p>{{phone.snippet}}</p>' +
-            '</li>' +
-            '</ul>',
-        controller: function PhoneListController() {
+        templateUrl: 'static/components/header/index.html',
+        controller: function headeController() {
             this.phones = [
                 {
                     name: 'Nexus S',

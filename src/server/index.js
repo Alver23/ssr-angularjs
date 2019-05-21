@@ -4,15 +4,10 @@ const app = express();
 const server = require('http').createServer(app);
 const port = 3000;
 
-const viewPath = `${__dirname}/app/views`;
-
-const static = path.join(__dirname, '../client/app');
-console.log(static)
-
-app.use('/static', express.static(static));
+app.use('/static', express.static(path.join(__dirname, '../client/app')));
 
 
-app.set('views', viewPath);
+app.set('views', `${__dirname}/app/views`);
 app.set('view engine', 'jade');
 
 app.get('/', function (req, res) {
